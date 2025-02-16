@@ -1,0 +1,12 @@
+torch
+numpy
+opencv-python
+pillow
+langchain
+langchain-community
+langchain-core
+pyaudio
+speechrecognition
+openai-whisper
+llama-cpp-python
+

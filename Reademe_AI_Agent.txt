@@ -1,0 +1,73 @@
+# AI Assistant with Desktop Vision and Voice Interaction
+
+## Overview
+This project is an AI-powered assistant that can see your desktop screen, listen to your voice commands, and respond via both text and speech. It utilizes:
+- **OpenAI Whisper** for Speech-to-Text (STT)
+- **Ollama (LLaMA 3.1)** for natural language processing
+- **pyttsx3** for Text-to-Speech (TTS)
+- **mss** for capturing desktop screenshots
+
+## Features
+✅ **Real-time Speech Recognition** using OpenAI Whisper  
+✅ **Desktop Screenshot Capture** for visual context  
+✅ **AI-powered Responses** via LLaMA 3.1  
+✅ **Text-to-Speech Output** for interactive responses  
+✅ **Multithreading** for smooth performance  
+
+## Installation
+### 1️⃣ Install Dependencies
+Run the following command to install required packages:
+```sh
+pip install numpy opencv-python torch pyttsx3 whisper mss pyaudio SpeechRecognition langchain langchain_community
+```
+
+### 2️⃣ Clone the Repository
+```sh
+git clone https://github.com/KapilGaur9292/LLM.git
+cd LLM
+```
+
+### 3️⃣ Run the Assistant
+```sh
+python AI_Agent1.py
+```
+
+## How It Works
+1. **Capturing Desktop Screenshots**  
+   - Uses `mss` to continuously take screenshots of your primary monitor.
+2. **Listening for Voice Commands**  
+   - Uses `SpeechRecognition` to listen to the microphone.
+   - Converts speech to text using OpenAI Whisper.
+3. **Processing AI Responses**  
+   - Sends the user's voice prompt and desktop screenshot to **LLaMA 3.1**.
+   - Receives and prints a response.
+4. **Speaking the Response**  
+   - Uses `pyttsx3` to convert text to speech and play it aloud.
+
+## Controls
+- **To Exit**: Press `Esc` or `q`
+
+## Code Structure
+```
+AI_Agent1.py      # Main AI assistant script
+README.md         # Project documentation
+requirements.txt  # List of dependencies
+```
+
+## Future Enhancements
+🔹 Support for more languages in Speech-to-Text  
+🔹 Improved screenshot analysis for better context awareness  
+🔹 Integration with external APIs for additional capabilities  
+
+## Troubleshooting
+- **Error: Microphone not detected?**  
+  Ensure your microphone is properly connected and try running:
+  ```sh
+  python -m speech_recognition
+  ```
+- **Slow response time?**  
+  Try reducing screenshot frequency in `time.sleep(0.1)` inside the `update()` method.
+
+## License
+This project is open-source under the MIT License.
+
